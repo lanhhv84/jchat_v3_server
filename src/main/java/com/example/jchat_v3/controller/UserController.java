@@ -29,7 +29,6 @@ public class UserController extends BaseController {
 
         ChatUser chatUser = chatUserService.getUserByUsername(username);
         if (chatUser != null && chatUser.getPassword().equals(password)) {
-            resp = true;
             StaticData.chatUsers.add(chatUser);
             UserInfo userInfo = new UserInfo();
             userInfo.setId(chatUser.getId());
