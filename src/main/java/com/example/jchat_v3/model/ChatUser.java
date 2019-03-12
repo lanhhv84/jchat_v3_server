@@ -21,6 +21,9 @@ public class ChatUser {
     @Column(name = "u_password", length = 32)
     private String password;
 
+    @Column(name = "u_nickname", length = 64)
+    private String nickName;
+
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
             name = "group_user",
@@ -84,5 +87,13 @@ public class ChatUser {
 
     public void setReceiveMessages(Set<Message> receiveMessages) {
         this.receiveMessages = receiveMessages;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 }
