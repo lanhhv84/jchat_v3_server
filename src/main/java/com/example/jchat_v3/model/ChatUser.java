@@ -27,15 +27,15 @@ public class ChatUser {
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "group_id")}
     )
-    private Set<ChatGroup> groups = new HashSet<ChatGroup>();
+    private Set<ChatGroup> groups = new HashSet<>();
 
     @OneToMany(mappedBy = "sender")
     @JsonIgnore
-    private Set<Message> sendMessages = new HashSet<Message>();
+    private Set<Message> sendMessages = new HashSet<>();
 
     @OneToMany(mappedBy = "receiver")
     @JsonIgnore
-    private Set<Message> receiveMessages = new HashSet<Message>();
+    private Set<Message> receiveMessages = new HashSet<>();
 
 
     public int getId() {
