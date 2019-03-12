@@ -12,16 +12,14 @@ import java.util.HashMap;
 
 @Controller
 @RequestMapping("/group")
-public class GroupController {
+public class GroupController  extends BaseController{
 
     @Autowired
     ChatGroupService chatGroupService;
 
     @RequestMapping("/{id}")
-    public ResponseEntity get(@PathVariable("id") int id) {
-        HashMap<String, ChatGroup> hashMap = new HashMap<>();
-        hashMap.put("value", chatGroupService.findOne(id));
-        return ResponseEntity.ok(hashMap);
+    public ResponseEntity<?> get(@PathVariable("id") int id) {
+        return ok(chatGroupService.findOne(id));
     }
 
 

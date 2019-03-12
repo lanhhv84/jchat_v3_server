@@ -2,7 +2,10 @@ package com.example.jchat_v3.controller;
 
 
 import com.example.jchat_v3.model.ChatUser;
+import com.example.jchat_v3.model.UserInfo;
 import com.example.jchat_v3.service.ChatUserService;
+import com.example.jchat_v3.statics.StaticData;
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,10 +16,12 @@ import java.util.HashMap;
 
 @Controller
 @RequestMapping(path = "/user")
-public class UserController {
+public class UserController extends BaseController {
 
     @Autowired
     ChatUserService chatUserService;
+
+    Gson gson = new Gson();
 
     @RequestMapping(path = "/login")
     public ResponseEntity<?> login(@RequestParam("username") String username,
@@ -26,10 +31,13 @@ public class UserController {
         ChatUser chatUser = chatUserService.getUserByUsername(username);
         if (chatUser != null && chatUser.getPassword().equals(password)) {
             resp = true;
+            StaticData.chatUsers.add(chatUser);
+            UserInfo userInfo = new UserInfo();
+            userInfo.setId(chatUser.getId());
+            userInfo.setNickName(chatUser.getNickName());
+            StaticData.online.add(userInfo);
         }
-        HashMap<String, Boolean> res = new HashMap<>();
-        res.put("value", resp);
-        return ResponseEntity.ok(res);
+        return ok(resp);
     }
 
     @RequestMapping(path = "/add")
@@ -49,9 +57,7 @@ public class UserController {
             chatUserService.add(chatUser);
             value = true;
         }
-        HashMap<String, Boolean> hashMap = new HashMap<>();
-        hashMap.put("value", value);
-        return ResponseEntity.ok(hashMap);
+        return ok(value);
     }
 
     @RequestMapping(path = "/exist")
@@ -62,20 +68,28 @@ public class UserController {
     @RequestMapping(path = "/group")
     public ResponseEntity<?> group(@RequestParam("username") String username) {
         ChatUser chatUser = chatUserService.getUserByUsername(username);
-        return ResponseEntity.ok(chatUser.getGroups());
+        return ok(chatUser.getGroups());
     }
 
     @RequestMapping(path = "/message/receive")
     public ResponseEntity<?> receiveMessage(@RequestParam("username") String username) {
         ChatUser chatUser = chatUserService.getUserByUsername(username);
-        return ResponseEntity.ok(chatUser.getReceiveMessages());
+        return ok(chatUser.getReceiveMessages());
     }
 
     @RequestMapping(path = "/message/send")
     public ResponseEntity<?> sendMessage(@RequestParam("username") String username) {
         ChatUser chatUser = chatUserService.getUserByUsername(username);
-        return ResponseEntity.ok(chatUser.getSendMessages());
+        return ok(chatUser.getSendMessages());
     }
+
+
+    @RequestMapping(path = "/online")
+    public ResponseEntity<?> online() {
+        return ok(gson.toJson(StaticData.online));
+    }
+
+
 
 
 
