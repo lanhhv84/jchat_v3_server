@@ -26,7 +26,6 @@ public class UserController extends BaseController {
     @RequestMapping(path = "/login")
     public ResponseEntity<?> login(@RequestParam("username") String username,
                                    @RequestParam("password") String password) {
-        boolean resp = false;
 
         ChatUser chatUser = chatUserService.getUserByUsername(username);
         if (chatUser != null && chatUser.getPassword().equals(password)) {
