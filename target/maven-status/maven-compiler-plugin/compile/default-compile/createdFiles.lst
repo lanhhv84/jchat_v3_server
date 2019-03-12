@@ -1,0 +1,17 @@
+com/example/jchat_v3/model/Message.class
+com/example/jchat_v3/service/IService.class
+com/example/jchat_v3/db/ChatGroupDB.class
+com/example/jchat_v3/db/ChatUserDB.class
+com/example/jchat_v3/controller/GroupController.class
+com/example/jchat_v3/model/ChatGroup.class
+com/example/jchat_v3/service/GroupMessageService.class
+com/example/jchat_v3/model/ChatUser.class
+com/example/jchat_v3/hibernate/HibernateAnnotationUtil.class
+com/example/jchat_v3/service/MessageService.class
+com/example/jchat_v3/service/ChatGroupService.class
+com/example/jchat_v3/db/MessageDB.class
+com/example/jchat_v3/JchatV3Application.class
+com/example/jchat_v3/model/GroupMessage.class
+com/example/jchat_v3/service/ChatUserService.class
+com/example/jchat_v3/controller/UserController.class
+com/example/jchat_v3/db/GroupMessageDB.class

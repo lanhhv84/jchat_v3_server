@@ -1,0 +1,17 @@
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/model/GroupMessage.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/db/MessageDB.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/service/GroupMessageService.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/hibernate/HibernateAnnotationUtil.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/JchatV3Application.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/service/MessageService.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/model/ChatUser.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/service/IService.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/service/ChatUserService.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/model/ChatGroup.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/controller/UserController.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/model/Message.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/db/ChatUserDB.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/db/ChatGroupDB.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/service/ChatGroupService.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/controller/GroupController.java
+/Users/hvlpr/Desktop/jchat_v3/src/main/java/com/example/jchat_v3/db/GroupMessageDB.java
