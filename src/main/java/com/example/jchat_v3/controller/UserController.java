@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.HashMap;
+
 @Controller
 @RequestMapping(path = "/user")
 public class UserController {
@@ -25,7 +27,9 @@ public class UserController {
         if (chatUser != null && chatUser.getPassword().equals(password)) {
             resp = true;
         }
-        return ResponseEntity.ok(resp);
+        HashMap<String, Boolean> res = new HashMap<>();
+        res.put("value", resp);
+        return ResponseEntity.ok(res);
     }
 
     @RequestMapping(path = "/add")
