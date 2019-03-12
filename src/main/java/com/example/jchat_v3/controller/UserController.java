@@ -34,7 +34,8 @@ public class UserController {
 
     @RequestMapping(path = "/add")
     public ResponseEntity<?> add(@RequestParam("username") String username,
-                                 @RequestParam("password") String password) {
+                                 @RequestParam("password") String password,
+                                 @RequestParam("nickname") String nickname) {
         Boolean value = false;
         ChatUser chatUser = chatUserService.getUserByUsername(username);
         if (chatUser != null) {
@@ -44,6 +45,7 @@ public class UserController {
             chatUser = new ChatUser();
             chatUser.setUsername(username);
             chatUser.setPassword(password);
+            chatUser.setNickName(nickname);
             chatUserService.add(chatUser);
             value = true;
         }
