@@ -35,17 +35,21 @@ public class UserController {
     @RequestMapping(path = "/add")
     public ResponseEntity<?> add(@RequestParam("username") String username,
                                  @RequestParam("password") String password) {
+        Boolean value = false;
         ChatUser chatUser = chatUserService.getUserByUsername(username);
         if (chatUser != null) {
-            return ResponseEntity.ok(false);
+            value = false;
         }
         else {
             chatUser = new ChatUser();
             chatUser.setUsername(username);
             chatUser.setPassword(password);
             chatUserService.add(chatUser);
-            return ResponseEntity.ok(true);
+            value = true;
         }
+        HashMap<String, Boolean> hashMap = new HashMap<>();
+        hashMap.put("value", value);
+        return ResponseEntity.ok(hashMap);
     }
 
     @RequestMapping(path = "/exist")
