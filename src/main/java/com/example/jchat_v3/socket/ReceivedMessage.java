@@ -1,10 +1,12 @@
 package com.example.jchat_v3.socket;
 
+import com.example.jchat_v3.model.UserInfo;
+
 import java.util.Date;
 
 public class ReceivedMessage {
-    private int receiver;
-    private int sender;
+    private UserInfo receiver;
+    private UserInfo sender;
     private String content;
     private Date receivedDate;
     private boolean group;
