@@ -11,13 +11,6 @@ public class ReceivedMessage {
     private Date receivedDate;
     private boolean group;
 
-    public int getReceiver() {
-        return receiver;
-    }
-
-    public void setReceiver(int receiver) {
-        this.receiver = receiver;
-    }
 
     public String getContent() {
         return content;
@@ -43,11 +36,20 @@ public class ReceivedMessage {
         this.group = group;
     }
 
-    public int getSender() {
+
+    public UserInfo getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(UserInfo receiver) {
+        this.receiver = receiver;
+    }
+
+    public UserInfo getSender() {
         return sender;
     }
 
-    public void setSender(int sender) {
+    public void setSender(UserInfo sender) {
         this.sender = sender;
     }
 }

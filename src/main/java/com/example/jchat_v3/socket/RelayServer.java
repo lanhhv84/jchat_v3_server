@@ -80,8 +80,8 @@ public class RelayServer extends Thread {
             Message message = new Message();
             message.setId(-1);
             message.setContent(receivedMessage.getContent());
-            ChatUser sender = userService.findOne(receivedMessage.getSender());
-            ChatUser receiver = userService.findOne(receivedMessage.getReceiver());
+            ChatUser sender = userService.findOne(receivedMessage.getSender().getId());
+            ChatUser receiver = userService.findOne(receivedMessage.getReceiver().getId());
             message.setReceiver(receiver);
             message.setSender(sender);
             message.setSendTime(receivedMessage.getReceivedDate());
