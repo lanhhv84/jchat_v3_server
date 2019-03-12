@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.example.jchat_v3.JchatV3ApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.94 s - in com.example.jchat_v3.JchatV3ApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.929 s - in com.example.jchat_v3.JchatV3ApplicationTests
