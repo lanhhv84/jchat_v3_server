@@ -36,8 +36,12 @@ public class UserController extends BaseController {
             userInfo.setId(chatUser.getId());
             userInfo.setNickName(chatUser.getNickName());
             StaticData.online.add(userInfo);
+            return ok(gson.toJson(userInfo));
         }
-        return ok(resp);
+        else {
+            return ok(null);
+        }
+
     }
 
     @RequestMapping(path = "/add")

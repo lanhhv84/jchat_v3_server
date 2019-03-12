@@ -21,6 +21,7 @@ public class Main implements CommandLineRunner {
     @Override
     public void run(String ... argv) throws Exception {
         RelayServer relayServer = new RelayServer(messageService);
+        System.out.println("Start relaying message");
         relayServer.start();
     }
 }

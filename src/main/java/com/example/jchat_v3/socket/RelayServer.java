@@ -50,6 +50,7 @@ public class RelayServer extends Thread {
                 try {
                     InputStream inputStream = socket.getInputStream();
                     int userId = inputStream.read();
+                    System.out.println("Connected from: " + String.valueOf(userId));
                     WriteReadThread writeReadThread = new WriteReadThread(socket, this::callBack);
                     connectedSocket.put(userId, writeReadThread);
                     writeReadThread.start();
