@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jchat</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">12573259</property>
+        <property name="hibernate.connection.pool_size">100</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <mapping class="com.example.jchat_v3.model.ChatGroup"/>
+        <mapping class="com.example.jchat_v3.model.ChatUser"/>
+        <mapping class="com.example.jchat_v3.model.Message"/>
+        <mapping class="com.example.jchat_v3.model.GroupMessage"/>
+    </session-factory>
+</hibernate-configuration>
