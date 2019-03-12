@@ -21,6 +21,7 @@ public class ReadThread extends Thread {
         System.out.println("Start to read");
         while (true) {
             try {
+                System.out.println("Received a message");
                 callBack.apply(reader.readObject());
 
 

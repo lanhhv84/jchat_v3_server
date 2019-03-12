@@ -92,6 +92,7 @@ public class RelayServer extends Thread {
             WriteReadThread pair = connectedSocket.get(receivedMessage.getReceiver());
             if (pair != null) {
                 pair.getWriteThread().write(message);
+                System.out.println("Transporting message...");
             }
         }
         return null;
